@@ -4,12 +4,12 @@ $site_script = @'
      "actions": [
          {
              "verb": "applyTheme",
-             "themeName": "Alex2"
+             "themeName": "AlexBlue"
          },
          {
             "verb": "addNavLink",
             "url": "https://qa01alexandriava.sharepoint.com/SitePages/Home.aspx",
-            "displayName": "",
+            "displayName": "CityPoint",
             "isWebRelative": false
          }
      ],
