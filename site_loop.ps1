@@ -3,7 +3,7 @@ $LoginName = "joseph.crockett.a@alexandriava.gov"
 $adminUrl = "https://alexandriava1-admin.sharepoint.com"
 # Connect-SPOService -Url $adminUrl -Credential $creds
 # $TemplateWorkingOnNow = "STS#0"
-$TemplateWorkingOnNow = "GROUP#0"
+# $TemplateWorkingOnNow = "GROUP#0"
 
 function Get-CoaSpoStsTheme () {
     $Name = (Get-PnPTheme -DetectCurrentComposedLook).Name

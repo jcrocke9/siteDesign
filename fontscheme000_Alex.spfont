@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:fontScheme name="Roboto" previewSlot1="title" previewSlot2="body" xmlns:s="http://schemas.microsoft.com/sharepoint/">
+    <s:fontSlots>
+        <s:fontSlot name="title">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.svg#robotoregular" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png"  />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI Light" />
+        </s:fontSlot>
+        <s:fontSlot name="navigation">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.svg#robotolight" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI" />
+        </s:fontSlot>
+        <s:fontSlot name="small-heading">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.svg#robotoregular" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI" />
+        </s:fontSlot>
+        <s:fontSlot name="heading">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.svg#robotoregular" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI Semilight" />
+        </s:fontSlot>
+        <s:fontSlot name="large-heading">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-regular-webfont.svg#robotoregular" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI Light" />
+        </s:fontSlot>
+        <s:fontSlot name="body">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.svg#robotolight" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI" />
+        </s:fontSlot>
+        <s:fontSlot name="large-body">
+            <s:latin typeface="Roboto" eotsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.eot" woffsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.woff" ttfsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.ttf" svgsrc="/sites/recruitment/SiteAssets/Roboto/roboto-light-webfont.svg#robotolight" largeimgsrc="/_layouts/15/fonts/BodoniBookLarge.png" smallimgsrc="/_layouts/15/fonts/BodoniBookSmall.png" />
+            <s:ea typeface="" />
+            <s:cs typeface="Segoe UI Semilight" />
+        </s:fontSlot>
+    </s:fontSlots>
+</s:fontScheme>
