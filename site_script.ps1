@@ -5,12 +5,6 @@ $site_script = @'
          {
              "verb": "applyTheme",
              "themeName": "AlexBlue"
-         },
-         {
-            "verb": "addNavLink",
-            "url": "https://qa01alexandriava.sharepoint.com/SitePages/Home.aspx",
-            "displayName": "CityPoint",
-            "isWebRelative": false
          }
      ],
          "bindata": { },
