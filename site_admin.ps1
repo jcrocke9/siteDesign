@@ -1,4 +1,3 @@
-$ownersGroup = Get-PnPGroup -AssociatedOwnerGroup
+Import-Module SharePointPnPPowerShellOnline
 
-Add-PnPUserToGroup -Identity $ownersGroup -EmailAddress adminjoe.crockett@qa01alexandriava.net 
-Remove-PnPUserFromGroup -LoginName adminjoe.crockett@qa01alexandriava.net -Identity $ownersGroup
+Connect-PnPOnline
