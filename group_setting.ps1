@@ -7,9 +7,9 @@ $Id = (Get-AzureADDirectorySetting | Where-object -Property Displayname -Value "
 $setting = Get-AzureADDirectorySetting -Id $Id
 
 $setting["ClassificationList"] = "Administrative, Public Use Data, Protected Data - Restricted, Protected Data - Highly Sensitive"
-$setting["ClassificationDescriptions"] = "Administrative: Data of a routine administrative nature, Public Use Data: Data intended for general public use, Protected Data - Restricted: Data related to employee performance or evaluations or other confidential information, Protected Data - Highly Sensitive: Data related to financial or identity theft"
+$setting["ClassificationDescriptions"] = "Administrative: Data of a routine administrative nature, Public Use Data: Data intended for public use, Protected Data - Restricted: Data related to employee performance or evaluations or other confidential information, Protected Data - Highly Sensitive: Data related to financial or identity theft or data that needs to be either HIPAA or CJI compliant"
 # HIPAA: Data related to the Health Insurance Portability and Accountability Act, CJI: Data related to Criminal Justice Information
-$setting["PrefixSuffixNamingRequirement"] = "[Department]_[GroupName]"
+# $setting["PrefixSuffixNamingRequirement"] = "[Department]_[GroupName]"
 $setting["UsageGuidelinesUrl"] = ""
 
 # New-AzureADDirectorySetting -DirectorySetting $setting
