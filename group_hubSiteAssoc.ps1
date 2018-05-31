@@ -1,0 +1,1 @@
+Get-SPOSite -Template "GROUP#0" -Limit ALL | Where-Object {($_.Url -clike "*ITS*") -or ($_.Url -Clike "*IT*") -or ($_.Url -like "*swu17*") -or ($_.Url -like "*eppm*")} | foreach { Add-SPOHubSiteAssociation $_.Url -HubSite https://alexandriava1.sharepoint.com/teams/ITSPortal } 
