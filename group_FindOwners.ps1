@@ -1,3 +1,10 @@
+Import-Module AzureADPreview
+Import-Module Microsoft.Online.SharePoint.PowerShell
+Connect-SPOService -Url https://alexandriava1-admin.sharepoint.com
+Connect-AzureAD
+$WarningDate = (Get-Date).AddDays(-90)
+$Today = (Get-Date)
+
 $groupInfo = @()
 Get-AzureADMSGroup -All:$true | where-object {$_.GroupTypes -like "*Unified*"} | foreach-object {
     $id = $_.Id
@@ -12,17 +19,19 @@ Get-AzureADMSGroup -All:$true | where-object {$_.GroupTypes -like "*Unified*"} |
     }
     #region
     # this needs to have exchange, because it pulls it from UnifiedGroup cmdlet
+    $ExoGroupObj = Get-UnifiedGroup -Identity $name
+    $ExoSpoUrl = $ExoGroupObj.SharePointDocumentsUrl
     [string]$SpoSiteStatus
     $AuditRecs = 0
     [string]$AuditRecsDate
     Clear-Variable SpoSiteStatus -ErrorAction SilentlyContinue
     Clear-Variable AuditRecs -ErrorAction SilentlyContinue
     Clear-Variable AuditRecsDate -ErrorAction SilentlyContinue
-    If ($_.SharePointDocumentsUrl -ne $Null)
+    If ($ExoGroupObj.SharePointDocumentsUrl -ne $Null)
     {
-        $SPOSite = (Get-SPOSite -Identity $_.SharePointDocumentsUrl.replace("/Shared Documents", ""))
+        $SPOSite = (Get-SPOSite -Identity $ExoGroupObj.SharePointDocumentsUrl.replace("/Shared Documents", ""))
         Write-Host "Checking" $SPOSite.Title "..."
-        $AuditCheck = $_.SharePointDocumentsUrl + "/*"
+        $AuditCheck = $ExoGroupObj.SharePointDocumentsUrl + "/*"
         $AuditRecs = (Search-UnifiedAuditLog -RecordType SharePointFileOperation -StartDate $WarningDate -EndDate $Today -ObjectId $AuditCheck -SessionCommand ReturnNextPreviewPage)
         If ($AuditRecs -eq $null)
         {
@@ -45,7 +54,8 @@ Get-AzureADMSGroup -All:$true | where-object {$_.GroupTypes -like "*Unified*"} |
         Owner       = $ownerStr
         AuditRecsDate = $AuditRecsDate
         SpoSiteStatus = $SpoSiteStatus
+        SharePointUrl = $ExoSpoUrl
     }
     $groupInfo += $group
 }
-$groupInfo | Export-Csv -Path C:\alex\out\GroupInfo1.csv
+$groupInfo | Export-Csv -Path C:\alex\out\GroupInfo2.csv
