@@ -9,14 +9,6 @@ $groupInfo = @()
 Get-AzureADMSGroup -All:$true | where-object {$_.GroupTypes -like "*Unified*"} | foreach-object {
     $id = $_.Id
     $name = $_.DisplayName
-    $owner = @()
-    [string[]]$ownerStr
-    Clear-Variable ownerStr -ErrorAction SilentlyContinue
-    $owner = (Get-AzureADGroupOwner -ObjectId $id).UserPrincipalName
-    $owner | ForEach-Object {
-        [string]$ownerToString = $_ + ";"
-        $ownerStr += $ownerToString
-    }
     #region
     # this needs to have exchange, because it pulls it from UnifiedGroup cmdlet
     $ExoGroupObj = Get-UnifiedGroup -Identity $name
@@ -48,14 +40,28 @@ Get-AzureADMSGroup -All:$true | where-object {$_.GroupTypes -like "*Unified*"} |
         $SpoSiteStatus = "Obsolete"
     }
     #endregion
-    $group = New-Object psobject -Property @{
-        Id          = $id
-        DisplayName = $name
-        Owner       = $ownerStr
-        AuditRecsDate = $AuditRecsDate
-        SpoSiteStatus = $SpoSiteStatus
-        SharePointUrl = $ExoSpoUrl
+    $owner = @()
+    $owner = (Get-AzureADGroupOwner -ObjectId $id).UserPrincipalName
+
+    [string[]]$ownerStr
+    Clear-Variable ownerStr -ErrorAction SilentlyContinue
+    $owner | ForEach-Object {
+        [string]$ownerToString = $_ + ";"
+        $ownerStr += $ownerToString
     }
-    $groupInfo += $group
+
+
+    $owner | ForEach-Object {
+        $group = New-Object psobject -Property @{
+            Id          = $id
+            DisplayName = $name
+            Owner       = $_
+            AuditRecsDate = $AuditRecsDate
+            SpoSiteStatus = $SpoSiteStatus
+            SharePointUrl = $ExoSpoUrl
+            OwnerCsv = $ownerStr
+        }
+        $groupInfo += $group
+    }
 }
-$groupInfo | Export-Csv -Path C:\alex\out\GroupInfo2.csv
+$groupInfo | Export-Csv -Path C:\alex\out\GroupInfo4.csv
